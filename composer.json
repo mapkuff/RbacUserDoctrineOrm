@@ -1,16 +1,36 @@
 {
-   "name":"evilband7/zf2-rbac-user-doctrine-orm",
-   "description":"A module that joins zfc-rbac & zfc-user in a pre-configured doctrine ORM based module",
+   "name":"evilband7/rbac-user-doctrine-orm",
+   "description":"A module that integrate zfc-rbac with zfc-user",
    "require":{
-      "php":">=5.3.3",
+      "php":"~6.0 || ~5.5"
+   },
+   "type": "library",
+   "license": "MIT",
+   "require-dev" : {
       "zf-commons/zfc-user":"*",
       "zf-commons/zfc-user-doctrine-orm":"*",
       "zf-commons/zfc-rbac":"*",
       "doctrine/doctrine-orm-module":"*"
    },
+   "suggest": {
+      "zendframework/zend-captcha" : "Zend\\Captcha if you want to use the captcha component"
+   },
+   "extra": {
+      "branch-alias": {
+      }
+   },
+   "keywords": [
+      "zf2", "zf3" , "zfcuser", "zfcrbac"
+   ],
+   "authors": [
+      {
+         "name": "Siwapun Siwaporn",
+         "email": "map.siwapun@gmail.com"
+      }
+   ],
    "autoload":{
       "psr-0":{
-         "RbacUserDoctrineOrm":"src/"
+         "RbacUserDoctrineOrm":"RbacUserDoctrineOrm/src/"
       }
    }
 }
