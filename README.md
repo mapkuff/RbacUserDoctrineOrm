@@ -1,5 +1,6 @@
 # RbacUserDoctrineOrm
 ZF Module which in integrate [ZfcUserDoctrineOrm](https://github.com/ZF-Commons/ZfcUserDoctrineORM) with [ZfcRbac](https://github.com/ZF-Commons/zfc-rbac)
+Inspired by: https://github.com/esserj/RbacUserDoctrineOrm
 
 Dependencies
 ------------
