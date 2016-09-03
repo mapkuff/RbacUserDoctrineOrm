@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                  http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="RbacUserDoctrineOrm\Domain\BaseRbacUser" table="auth_user">
+
+        <field name="providerRoles" column="provider_roles" type="simple_array"></field>
+
+        <many-to-many field="dbRoles" target-entity="RbacUserDoctrineOrm\Domain\Role">
+            <join-table name="auth_users_roles">
+                <join-columns>
+                    <join-column name="user_id" referenced-column-name="user_id"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="role_id" referenced-column-name="role_id"/>
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+
+    </mapped-superclass>
+
+</doctrine-mapping>

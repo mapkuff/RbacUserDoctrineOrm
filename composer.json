@@ -1,0 +1,16 @@
+{
+   "name":"evilband7/zf2-rbac-user-doctrine-orm",
+   "description":"A module that joins zfc-rbac & zfc-user in a pre-configured doctrine ORM based module",
+   "require":{
+      "php":">=5.3.3",
+      "zf-commons/zfc-user":"*",
+      "zf-commons/zfc-user-doctrine-orm":"*",
+      "zf-commons/zfc-rbac":"*",
+      "doctrine/doctrine-orm-module":"*"
+   },
+   "autoload":{
+      "psr-0":{
+         "RbacUserDoctrineOrm":"src/"
+      }
+   }
+}
