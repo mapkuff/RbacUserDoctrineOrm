@@ -24,9 +24,8 @@ return [
     'zfc_rbac' => [
         'role_provider' => [
             'ZfcRbac\Role\InMemoryRoleProvider' => [
-                'admin' => [
-                    'children'    => ['member'],
-                    'permissions' => ['article.delete']
+                '__tmp__' => [
+                    'permissions' => ['__tmp__']
                 ],
             ]
         ]
