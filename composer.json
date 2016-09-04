@@ -12,6 +12,7 @@
       "zf-commons/zfc-rbac": "~2.5 || dev-master"
    },
    "require-dev" : {
+      "zendframework/zend-mvc" : "~3.0"
    },
    "suggest": {
       "zf-commons/zfc-user-doctrine-orm" : "RbacUserDoctrineOrm require ZfcUserDoctrineOrm but we didn't provide in depencency because it's not support ZF3 yet. btw you can install it manually."
