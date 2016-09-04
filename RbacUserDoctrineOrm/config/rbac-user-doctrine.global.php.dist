@@ -4,7 +4,6 @@
           'enable_default_user_entity' => false,
       ],
       'zfcuser' => [
-          'enable_default_entities' => false,
           'userEntityClass' => 'YourUserEntityClass' //TODO
       ],
   ];

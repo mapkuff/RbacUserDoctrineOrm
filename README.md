@@ -68,6 +68,25 @@ If SQL looks okay, do:
 
     vendor/bin/doctrine-module orm:schema-tool:update --force
 
+# Roles
+RbacUserDoctrineOrm provide 2 sources of roles.
+1. `dbRoles` field which is hierarchy roles. You can define dbRoles in database tables `( auth_user, auth_role, auth_permission, auth_users_roles and auth_roles_permissions )`
+2. `providerRoles` field which is comma separated in `auth_user.provider_roles` column. Roles from this source will not work unless you provide your own [RoleProvder](https://github.com/ZF-Commons/zfc-rbac/blob/master/docs/03.%20Role%20providers.md)
+
+# Customize User Entity
+Fist, copy config/rbac-user-doctrine.global.php.dist to autoload folder. (don't forget to remove .dist)
+Then customize your entity class name
+
+     return [
+          'rbac-user-doctrine-orm' => [
+              'enable_default_user_entity' => false,
+          ],
+          'zfcuser' => [
+              'userEntityClass' => 'YourUserEntityClass' //TODO
+          ],
+      ];
+
+and your User class must extends `RbacUserDoctrineOrm\Domain\AbstractRbacUser`
 
 # TODO
 - need more test on different version on depended module
