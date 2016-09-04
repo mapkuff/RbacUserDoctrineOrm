@@ -11,7 +11,8 @@ namespace RbacUserDoctrineOrm\Factory;
 
 use Interop\Container\ContainerInterface;
 use RbacUserDoctrineOrm\Options\ModuleOptions;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
 class ModuleOptionsFactory implements  FactoryInterface
 {
@@ -20,5 +21,12 @@ class ModuleOptionsFactory implements  FactoryInterface
         $config = $container->get('Config');
         return new ModuleOptions($config['rbac-user-doctrine-orm']);
     }
+
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        $config = $serviceLocator->get('Config');
+        return new ModuleOptions($config['rbac-user-doctrine-orm']);
+    }
+
 
 }

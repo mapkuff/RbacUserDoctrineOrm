@@ -11,7 +11,8 @@ namespace RbacUserDoctrineOrm\Factory;
 
 use Interop\Container\ContainerInterface;
 use RbacUserDoctrineOrm\Authentication\Storage\ZfcUserDoctrineStorageDelegator;
-use Zend\ServiceManager\Factory\DelegatorFactoryInterface;
+use Zend\ServiceManager\DelegatorFactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
 class ZfcUserDoctrineStorageDelegatorFactory implements  DelegatorFactoryInterface
 {
@@ -21,5 +22,13 @@ class ZfcUserDoctrineStorageDelegatorFactory implements  DelegatorFactoryInterfa
         $moduleOptions = $container->get('zfcuser_module_options');
         return new ZfcUserDoctrineStorageDelegator($callback(), $em, $moduleOptions );
     }
+
+    public function createDelegatorWithName(ServiceLocatorInterface $serviceLocator, $name, $requestedName, $callback)
+    {
+        $em = $serviceLocator->get('Doctrine\ORM\EntityManager');
+        $moduleOptions = $serviceLocator->get('zfcuser_module_options');
+        return new ZfcUserDoctrineStorageDelegator($callback(), $em, $moduleOptions );
+    }
+
 
 }
