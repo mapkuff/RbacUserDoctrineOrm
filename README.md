@@ -5,6 +5,8 @@ Inspired by https://github.com/esserj/RbacUserDoctrineOrm
 Dependencies
 ------------
 
+- PHP >= 5.6
+- Zend Framework 3 or >= 2.7
 - [ZfcUser](https://github.com/ZF-Commons/ZfcUser)
 - [ZfcUserDoctrineOrm](https://github.com/ZF-Commons/ZfcUserDoctrineORM)
 - [DoctrineModule](https://github.com/doctrine/DoctrineModule)
@@ -16,10 +18,36 @@ Installation
 
 Install RbacUserDoctrineOrm Module using composer
 
-    php composer.phar require evilband7/rbac-user-doctrine-orm:dev-master
+    {
+        ...,
+        "require": {
+            ...,
+            "evilband7/rbac-user-doctrine-orm" : "~0.1 || dev-master"
+        }
+    }
+
+ps. If you using **ZF2**, please add **zf-commons/zfc-user-doctrine-orm** into your composer dependency. For **ZF3**, please install **ZfcUserDoctrineOrm** manually by cloning module into your project.
+
+for ZF3 project, your composer should look like this.
+
+    {
+        ...,
+        "require": {
+            ...,
+            "zendframework/zend-mvc" : "~3.0",
+            "zendframework/zend-servicemanager" : "~3.0",
+            "zendframework/zend-eventmanager" : "~3.0",
+            "zendframework/zend-router" : "~3.0",
+            "zf-commons/zfc-rbac" : "~2.5 || dev-master",
+            "zf-commons/zfc-user" : "~2.0 || 2.x-dev",
+            "doctrine/doctrine-module" : "~1.0 || dev-master",
+            "doctrine/doctrine-orm-module" : "~1.0 || dev-master",
+            "evilband7/rbac-user-doctrine-orm" : "~0.1 || dev-master"
+        }
+    }
 
 
-Set up your Modules in `config/application/application.config.php`, something like
+Then set up your Modules in `config/application/application.config.php`, something like
 
     'modules' => array(
         'DoctrineModule',
@@ -48,9 +76,6 @@ If SQL looks okay, do:
 
 # Author
 Mr. Siwapun Siwaporn
-[Facebook](https://www.facebook.com/maptwoza?ref=bookmarks)
-[Twitter](https://twitter.com/siwapun)
-[LinkedIn](https://www.linkedin.com/in/siwapun-siwaporn-3b060594)
 map.siwapun@gmail.com
 
 feel free to ask or suggest me. :)
