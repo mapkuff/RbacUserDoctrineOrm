@@ -70,7 +70,9 @@ If SQL looks okay, do:
 
 # Roles
 RbacUserDoctrineOrm provide 2 sources of roles.
+
 1. `dbRoles` field which is hierarchy roles. You can define dbRoles in database tables `( auth_user, auth_role, auth_permission, auth_users_roles and auth_roles_permissions )`
+
 2. `providerRoles` field which is comma separated in `auth_user.provider_roles` column. Roles from this source will not work unless you provide your own [RoleProvder](https://github.com/ZF-Commons/zfc-rbac/blob/master/docs/03.%20Role%20providers.md)
 
 # Customize User Entity
