@@ -9,10 +9,11 @@ use Zend\EventManager\EventInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\ModuleManager\Feature\DependencyIndicatorInterface;
 use Zend\Mvc\MvcEvent;
 
 class Module implements  BootstrapListenerInterface, ConfigProviderInterface,
-    AutoloaderProviderInterface
+    AutoloaderProviderInterface, DependencyIndicatorInterface
 {
 
     /**
@@ -61,5 +62,16 @@ class Module implements  BootstrapListenerInterface, ConfigProviderInterface,
             ),
         );
     }
-    
+
+    public function getModuleDependencies()
+    {
+        return [
+            'ZfcUser',
+            'ZfcUserDoctrineOrm',
+            'DoctrineModule',
+            'DoctrineORMModule',
+            'ZfcRbac'
+        ];
+    }
+
 }
