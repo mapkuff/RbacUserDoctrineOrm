@@ -93,7 +93,7 @@ class ZfcUserDoctrineStorageDelegator implements  StorageInterface
         $roles->setDirty(true);
         $roles->setInitialized(false);
 
-        $user->_setAllGrantedRoles( ArrayUtils::merge($allGrantedRoles, $user->getProviderRoles(), true)  );
+        $user->_setAllGrantedRoles( ArrayUtils::merge($allGrantedRoles, $user->getProviderRoles())  );
         $this->wrappedStorage->write($user);
     }
 
